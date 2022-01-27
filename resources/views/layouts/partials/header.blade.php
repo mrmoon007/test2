@@ -128,13 +128,28 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="route('logout')" onclick="event.preventDefault();
+            {{-- <a class="nav-link" href="route('logout')" onclick="event.preventDefault();
             this.closest('form').submit();">
-                <i class="fas fa-th-large"></i>Logout
+                logout
             </a>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
+            </form> --}}
+            <a class="btn btn-sm btn-info" href="{{ route('logout') }}"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                Logout
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+
+                @csrf
             </form>
         </li>
+        {{-- <li class="nav-item">
+            <a class="nav-link" data-widget="control-sidebar" data-slide="true">
+                <i class="fas fa-th-large"></i>
+            </a>
+
+        </li> --}}
     </ul>
 </nav>
